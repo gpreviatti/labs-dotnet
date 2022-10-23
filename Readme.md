@@ -1,5 +1,5 @@
 # Project with some labs and tests
 
-[ReservedKeywords](./ReservedKeyWords/Readme.md)
+[ReservedKeywords](./ReservedKeyWords)
 
-[BenchMarks](./Benchmarks/Readme.md)
+[BenchMarks](./Benchmarks)

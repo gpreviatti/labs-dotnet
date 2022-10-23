@@ -15,7 +15,9 @@
 |         JsonSeriealizer   |          100 |            200 | 210.885 ms | 4.0777 ms | 5.7164 ms | 210.406 ms | 28000.0000 | 2333.3333 |  333.3333 | 175.21 MB |
 |JsonConvert (NewtonSoft)   |          100 |            200 | 233.588 ms | 4.1199 ms | 3.6522 ms | 234.059 ms | 31500.0000 | 6000.0000 | 1500.0000 | 199.87 MB |
 
+
 ## Results Serialization
+
 
 |                     Method | amountPeople | amountAccounts |       Mean |     Error |    StdDev |       Gen0 |      Gen1 |      Gen2 | Allocated |
 |--------------------------- |------------- |--------------- |-----------:|----------:|----------:|-----------:|----------:|----------:|----------:|
@@ -29,5 +31,6 @@
 |          JsonSeriealizer   |          100 |            200 | 191.681 ms | 3.7839 ms | 6.5271 ms | 27333.3333 | 2333.3333 |  333.3333 | 168.57 MB |
 | JsonConvert (NewtonSoft)   |          100 |            200 | 204.180 ms | 2.7548 ms | 2.5768 ms | 29500.0000 | 4500.0000 | 1000.0000 | 179.41 MB |
 
-`If you want to test the results or change the data just clone and enjoy.`
+
+If you want to test the results or change the data just clone and enjoy.
 
