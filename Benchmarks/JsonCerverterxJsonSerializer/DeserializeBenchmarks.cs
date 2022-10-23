@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System.Text;
 using System.Text.Json;
 
-namespace ReadStringReadStreamBenchmarks;
+namespace JsonCerverterxJsonSerializer;
 
 [MemoryDiagnoser]
 [Orderer(BenchmarkDotNet.Order.SummaryOrderPolicy.FastestToSlowest)]
