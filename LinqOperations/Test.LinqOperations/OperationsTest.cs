@@ -1,5 +1,7 @@
 namespace Test.LinqOperations;
 
+public class Person { }
+
 public class OperationsTest
 {
     private List<Person> _person = new();
