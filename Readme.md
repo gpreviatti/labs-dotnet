@@ -2,4 +2,6 @@
 
 [ReservedKeywords](./ReservedKeyWords)
 
+[LinqOperations](./LinqOperations)
+
 [BenchMarks](./Benchmarks)
