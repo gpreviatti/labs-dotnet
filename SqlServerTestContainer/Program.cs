@@ -14,11 +14,13 @@ public class Program
         await container.StartAsync();
 
         var connectionString = container.GetConnectionString().Replace("localhost", "127.0.0.1");
+        Console.WriteLine(connectionString);
 
         await RunScript(connectionString, "./Scripts/CreateTable.sql");
         await RunScript(connectionString, "./Scripts/Insert.sql");
 
         await container.StopAsync();
+
     }
 
     public static async Task RunScript(string connectionString, string scriptPath)
