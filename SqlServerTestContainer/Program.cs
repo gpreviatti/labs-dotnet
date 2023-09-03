@@ -1,7 +1,12 @@
 ﻿using System.Data.SqlClient;
+using System.Diagnostics;
+using SqlServerTestContainer.Database.Models;
 using Testcontainers.MsSql;
+// ReSharper disable All
 
-public class Program
+namespace SqlServerTestContainer;
+
+public static class Program
 {
     public static async Task Main(string[] args)
     {
@@ -19,18 +24,50 @@ public class Program
         await RunScript(connectionString, "./Scripts/CreateTable.sql");
         await RunScript(connectionString, "./Scripts/Insert.sql");
 
-        await container.StopAsync();
+        var people = await GetPeople(connectionString);
 
+        Debug.Assert(people!.Any());
+
+        await container.StopAsync();
     }
 
-    public static async Task RunScript(string connectionString, string scriptPath)
+    private static async Task<IEnumerable<Person>?> GetPeople(string connectionString)
+    {
+        await using var connection = new SqlConnection(connectionString);
+
+        connection.Open();
+
+        var sqlQuery = "SELECT * FROM Person";
+
+        await using var command = new SqlCommand(sqlQuery, connection);
+
+        await using var reader = await command.ExecuteReaderAsync();
+
+        var people = new List<Person>();
+
+        while (reader.Read())
+        {
+            people.Add(new()
+            {
+                Id = reader.GetGuid(reader.GetOrdinal("Id")),
+                Name = reader.GetString(reader.GetOrdinal("Name")),
+                Email = reader.GetString(reader.GetOrdinal("Email"))
+            });
+        }
+
+        return people;
+    }
+
+    static async Task RunScript(string connectionString, string scriptPath)
     {
         var script = await File.ReadAllTextAsync(scriptPath);
 
         await using var connection = new SqlConnection(connectionString);
+
         connection.Open();
 
         await using var command = new SqlCommand(script, connection);
+
         await command.ExecuteNonQueryAsync();
 
         connection.Close();
