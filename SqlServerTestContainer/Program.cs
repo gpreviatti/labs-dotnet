@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using SqlServerTestContainer.Database.Models;
 using Testcontainers.MsSql;
-// ReSharper disable All
 
 namespace SqlServerTestContainer;
 
