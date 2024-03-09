@@ -11,13 +11,15 @@ namespace HttpClientxRefit;
 public class HttpClientxRefitBenchmarks
 {
     private IRefitUsersApi? refitUsersApi;
-    private readonly HttpClient? httpClient = new();
+    private HttpClient? httpClient;
 
     [GlobalSetup(Target = nameof(SendRequestWithRefit))]
-    public void Setup()
-    {
-        refitUsersApi = RestService.For<IRefitUsersApi>("http://localhost:8080");
-    }
+    public void SendRequestWithRefitSetup() => refitUsersApi = RestService.For<IRefitUsersApi>("http://localhost:8080");
+
+    [GlobalSetup(Target = nameof(SendRequestWithHttpClient))]
+    public void SendRequestWithHttpClientSetup() => httpClient = new();
+
+
 
     [Benchmark(Description = "Send request with HttpClient")]
     public async Task SendRequestWithHttpClient() => 
