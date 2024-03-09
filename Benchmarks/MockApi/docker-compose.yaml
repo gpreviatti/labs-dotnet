@@ -1,0 +1,15 @@
+services:
+  users-api1:
+    image: outofcoffee/imposter:3.35.0
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config:/opt/imposter/config:ro
+  users-api2:
+    image: outofcoffee/imposter:3.35.0
+    build: .
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./config:/opt/imposter/config:ro
