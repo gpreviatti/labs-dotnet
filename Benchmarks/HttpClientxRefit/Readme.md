@@ -16,14 +16,20 @@ BenchmarkDotNet v0.13.12, Windows 11
 ## Hints
 
 Outliers
-  HttpClientxRefitBenchmarks.'Send request with HttpClient': Default -> 11 outliers were removed (1.18 ms..1.47 ms)
-  HttpClientxRefitBenchmarks.'Send request with refit': Default      -> 7 outliers were removed (1.15 ms..1.26 ms)
+HttpClientxRefitBenchmarks.'Send request with HttpClient': Default -> 11 outliers were removed (1.18 ms..1.47 ms)
+
+HttpClientxRefitBenchmarks.'Send request with refit': Default      -> 7 outliers were removed (1.15 ms..1.26 ms)
 
 ## Legends
 
 Mean      : Arithmetic mean of all measurements
+
 Error     : Half of 99.9% confidence interval
+
 StdDev    : Standard deviation of all measurements
+
 Median    : Value separating the higher half of all measurements (50th percentile)
+
 Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+
 1 us      : 1 Microsecond (0.000001 sec)
