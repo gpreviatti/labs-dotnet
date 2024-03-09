@@ -16,8 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MockApi", "MockApi", "{94F0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{E9069FBB-8F61-4020-BE5B-5A3DAECE1A04}"
 	ProjectSection(SolutionItems) = preProject
-		MockApi\config\imposter-config.yaml = MockApi\config\imposter-config.yaml
 		MockApi\config\users.json = MockApi\config\users.json
+		MockApi\config\imposter-config.yaml = MockApi\config\imposter-config.yaml
 	EndProjectSection
 EndProject
 Global

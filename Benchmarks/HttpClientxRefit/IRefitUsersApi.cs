@@ -4,5 +4,5 @@ namespace HttpClientxRefit;
 public interface IRefitUsersApi
 {
     [Get("/users")]
-    Task<IEnumerable<User>> GetUsers();
+    Task<IReadOnlyCollection<User>> GetUsers();
 }

@@ -5,23 +5,26 @@ using System.Net.Http.Json;
 namespace HttpClientxRefit;
 
 [MemoryDiagnoser]
+[HardwareCounters]
+[MarkdownExporter]
 [Orderer(BenchmarkDotNet.Order.SummaryOrderPolicy.FastestToSlowest)]
 public class HttpClientxRefitBenchmarks
 {
-    private readonly IRefitUsersApi _refitUsersApi;
-    private readonly HttpClient _httpClient;
+    private IRefitUsersApi? refitUsersApi;
+    private HttpClient? httpClient;
 
-    public HttpClientxRefitBenchmarks()
+    [GlobalSetup]
+    public void Setup()
     {
-        _refitUsersApi = RestService.For<IRefitUsersApi>("http://localhost:8080");
-        _httpClient = new HttpClient();
+        refitUsersApi = RestService.For<IRefitUsersApi>("http://localhost:8080");
+        httpClient = new HttpClient();
     }
 
     [Benchmark(Description = "Send request with HttpClient")]
     public async Task SendRequestWithHttpClient() => 
-        await _httpClient.GetFromJsonAsync<IEnumerable<User>>("http://localhost:8081/users");
+        await httpClient!.GetFromJsonAsync<IReadOnlyCollection<User>>("http://localhost:8081/users");
 
     [Benchmark(Description = "Send request with refit")]
     public async Task SendRequestWithRefit() => 
-        await _refitUsersApi.GetUsers();
+        await refitUsersApi!.GetUsers();
 }
