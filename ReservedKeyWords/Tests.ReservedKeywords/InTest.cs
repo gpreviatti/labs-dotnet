@@ -4,7 +4,7 @@ namespace Tests.ReservedKeywords;
 
 public class InTest
 {
-    private readonly InClass inClass = new();
+    private readonly InClass _inClass = new();
 
     [Fact]
     public void Should_Calculate_Income_In_Account_Current_Balance_Without_In_Keyword()
@@ -19,9 +19,9 @@ public class InTest
         };
 
 
-        inClass.CalculateCurrentPriceWithIn(value, type, account);
+        _inClass.CalculateCurrentPriceWithIn(value, type, account);
 
-        
+
         Assert.Equal(200, account.CurrentBalance);
     }
 }
