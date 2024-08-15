@@ -1,6 +1,6 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.LinqOperations", "Test.LinqOperations\Test.LinqOperations.csproj", "{E44D4A0B-B1D3-479B-AFB8-AB91AA697D9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.LinqOperations", "Test.LinqOperations\Test.LinqOperations.csproj", "{E44D4A0B-B1D3-479B-AFB8-AB91AA697D9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

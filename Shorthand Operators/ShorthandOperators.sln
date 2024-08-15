@@ -1,6 +1,6 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShorthandOperators", "ShorthandOperators.csproj", "{F30AD58B-5C3E-4087-BDF4-C8B8BDD2A72C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShorthandOperators", "ShorthandOperators.csproj", "{F30AD58B-5C3E-4087-BDF4-C8B8BDD2A72C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

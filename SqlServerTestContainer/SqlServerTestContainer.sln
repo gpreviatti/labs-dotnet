@@ -1,6 +1,6 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlServerTestContainer", "SqlServerTestContainer.csproj", "{09D58D73-2746-413D-B561-2893B0F15479}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlServerTestContainer", "SqlServerTestContainer.csproj", "{09D58D73-2746-413D-B561-2893B0F15479}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
